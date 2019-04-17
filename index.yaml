@@ -1,0 +1,6 @@
+indexes:
+- kind: Genre_Data
+  ancestor: yes
+  properties:
+  - name: date
+    direction: desc

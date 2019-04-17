@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <!-- [END css] -->
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      blockquote {
+        margin-bottom: 10px;
+        border-left-color: #bbb;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .row {
+        margin-left: 0px;
+        margin-top: 10px;
+        overflow: scroll;
+      }
+      .linkButton { 
+           background: none;
+	   font-size: 16px;
+           border: none;
+           color: #006600;
+           text-decoration: underline;
+           cursor: pointer; 
+      }
+    </style>
+
+  </head>
+  <body>
+	  
+	  <div align=right><h1 style="font-size:20px;"><font color=#006600>Hi {{user}}</font></h1></div>
+	  
+	  
+          <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Movie Shopping</a>
+                <div class="nav-collapse collapse pull-right">
+                  <a href=displaycart class="btn">Cart</a>
+             
+               
+                  <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <div class="container">
+
+	    <ul>
+	     <li> <a href=display?category=action>Browse Action movies</a>
+	     <li> <a href=display?category=cartoon>Browse Cartoon movies</a>
+	     <li> <a href=display?category=comedy>Browse Comedy movies</a>
+	     <li> <a href=display?category=documentary>Browse documentary movies</a>
+	     <li> <a href=display?category=drama>Browse drama movies</a>
+	     <li> <a href=display?category=musical>Browse musical movies</a>
+	     <li> <a href=display?category=scifi>Browse scifi movies</a>
+	     <li> <a href=display?category=horror>Browse horror movies</a>
+		     </ul>
+		     
+	<ul>
+	<li> <a href=search> Search for movies </a>
+	</ul>
+		     
+		    <ul>
+		     	<li> <a href=Enter>Enter New Movie</a>
+		    </ul>
+      <hr>
+
+<a href="{{ url|safe }}">{{ url_linktext }}</a>
+    </div>
+    
+    
+    
+  </body>
+</html>
+{% endautoescape %}

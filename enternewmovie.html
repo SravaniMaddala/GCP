@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <!-- [END css] -->
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      blockquote {
+        margin-bottom: 10px;
+        border-left-color: #bbb;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .row {
+        margin-left: 0px;
+        margin-top: 10px;
+        overflow: scroll;
+      }
+    </style>
+      <center><h1 style="font-size:30px;"><font color=#006600>Enter New Movie Information</font></h1></center>
+  </head>
+  <body>
+          <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+		
+                <a class="brand" href="#">Movie Shopping</a>
+                <div class="nav-collapse collapse pull-right">
+                 
+             
+               <a href=displaycart class="btn">Cart</a>
+                  <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+	  <div align=right><h1 style="font-size:20px;"><font color=#006600>Hi {{user}}</font></h1></div>
+
+    <h1 style="font-size:20px;">{{Error}}</h1>
+   
+    <div class="container">
+
+
+      <form action="/Save?genre_name={{ genre_name }}" method="post">
+
+	      <div class='container'><center>
+		      <label for="title">Title:</label>
+		       <input type = "text" name = "title"><br> </div> 
+		       <div><center>
+			       
+		      <label for="director">Director:</label><input type = "text" name = "director"><br> </center></div>
+		       <div>
+		      <div><center><label for="mainactor1">Main Actor 1:</label><input type = "text" name = "mainactor1"><br></center></div>
+		      <div><center><label for="mainactor2">Main Actor 2:</label> <input type = "text" name = "mainactor2"><br></center></div>
+		      <div><center><label for="yearofrel">Year of Release:</label> <input type = "text" name = "yearofrel"><br></center></div>
+		      <div><center><label for="duration">Duration (in minutes):</label> <input type = "text" name = "duration"><br></center></div>
+		   	     <div><center><label for="buy_price">Price (Buy):</label> <input type = "text" name = "buy_price"><br></center></div>
+			     <div><center><label for="rent_price">Price (Rent):</label> <input type = "text" name = "rent_price"><br></center></div>
+		      
+		  
+		
+		<center><div><input type="submit" class="btn btn-large btn-primary" value="Submit Movie Info"></div></center>
+		  
+	
+	 <hr>
+	  </form>
+	  
+	 <form action="/Save?genre_name={{ genre_name }}" method="get">
+	 	<div><center>
+			<label for="category">Category:</label> <input value = "{{ genre_name }}" type = "text" name = "category"><br>
+		</center></div> 
+		<center><div><input type="submit" class="btn btn-large btn-primary" value="Submit"></div></center>
+	 	 
+	
+	      </form>
+	      
+	      
+	<!--<center><a href="{{ url1|safe }}">{{url_linktext1}}</a></center> -->
+	<center><a href="/?genre_name={{ genre_name }}">Back to main page</a></center>
+	
+
+
+      <hr>
+
+
+    </div>
+  </body>
+</html>
+{% endautoescape %}
