@@ -40,13 +40,6 @@ user = 'None'
 # will be consistent. However, the write rate should be limited to
 # ~1/second.
 
-'''def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
-    """Constructs a Datastore key for a Guestbook entity.
-
-    We use guestbook_name as the key.
-    """
-    return ndb.Key('Guestbook', guestbook_name)'''
-
 def genre_key(genre_name=DEFAULT_GENRE_NAME):
     """Constructs a Datastore key for a Guestbook entity.
 
@@ -60,19 +53,12 @@ def user_key(user_name=user):
     """
     return ndb.Key('User', user_name)
 
-# [START greeting]
+
 class Author(ndb.Model):
     """Sub model for representing an author."""
     identity = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
 
-
-'''class Greeting(ndb.Model):
-    """A main model for representing an individual Guestbook entry."""
-    author = ndb.StructuredProperty(Author)
-    content = ndb.StringProperty(indexed=False)
-    date = ndb.DateTimeProperty(auto_now_add=True)
-# [END greeting]'''
 
 class Genre_Data(ndb.Model):
     title = ndb.StringProperty()
