@@ -5,7 +5,7 @@ in App Engine (NoSQL) High Replication Datastore (HRD) and retrieved using a
 strongly consistent (ancestor) query.
 
 Link to the application: https://sravani-051096.appspot.com
-Main Code: guestbook.py
+# Main Code: guestbook.py
 
 ## Products
 - [App Engine][1]
